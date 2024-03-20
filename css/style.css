@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Wix+Madefor+Display:wght@400..800&display=swap');
-* {
-    /*box-sizing: border-box;*/
-}
+
 body {
     color:#6b6b6b;
     padding: 0;
@@ -25,7 +23,7 @@ body {
     margin-top: 5px;
 }
 h1, h3 {
-    color: #222;
+    color: #222;  
 }
 img {
     height: 100%;
@@ -46,4 +44,14 @@ img {
 .testo {
     width: 34.5%;
     padding: 5% 10%;
+}
+ul {
+    padding-left: 15px;
+}
+ul a {
+    text-decoration: none;
+    color: #ba7b57;
+}
+.nando {
+    max-width: 75%;
 }
