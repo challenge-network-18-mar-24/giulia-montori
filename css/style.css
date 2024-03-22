@@ -2,7 +2,9 @@
 * {
     box-sizing: border-box;
 } 
-
+::selection {
+    background-color: #c9e9ed;
+}
 body {
     color:#6b6b6b;
     padding: 0;
@@ -53,7 +55,7 @@ img {
 }
 .testo {
     /*width: 34.5%;*/
-    padding: 5% 10%;
+    padding: 10%;
 }
 ul {
     padding-left: 15px;
