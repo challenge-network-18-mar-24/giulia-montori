@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Wix+Madefor+Display:wght@400..800&display=swap');
+* {
+    box-sizing: border-box;
+} 
 
 body {
     color:#6b6b6b;
@@ -12,6 +15,9 @@ body {
     border-radius: 8px;
     margin: 2% auto;
     background-color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
 }
 .sopratitolo {
     margin: 0;
@@ -25,33 +31,42 @@ body {
 h1, h3 {
     color: #222;  
 }
+/*.foto, .testo {
+    display: inline-block;
+    vertical-align: middle;
+}*/
 img {
-    height: 100%;
     max-width: 100%;
     border-radius: 8px;
 }
-.foto, .testo {
-    display: inline-block;
-    vertical-align: middle;
-}
 .foto {
-    width: 45%;
-    line-height: 0;
+    /*width: 45%;
+    line-height: 0;*/
+    height: 100%;
+    background: #fca603;
+    background: linear-gradient(90deg, #fca603 0%, #fca603 73%, #fff 73%);
+    border-radius: 8px;
 }
 .foto img {
+    display: block;
     max-height: 93vh;
 }
 .testo {
-    width: 34.5%;
+    /*width: 34.5%;*/
     padding: 5% 10%;
 }
 ul {
     padding-left: 15px;
+    list-style-type: circle;
 }
 ul a {
     text-decoration: none;
     color: #ba7b57;
 }
-.nando {
-    max-width: 75%;
+.gif {
+    display: flex;
+    justify-content: space-between;
+}
+.gif img {
+    max-width: 49%;
 }
