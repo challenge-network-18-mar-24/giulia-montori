@@ -109,6 +109,7 @@ section {
     grid-template-columns: 48% auto;
     align-items: center;
     box-shadow: 0px 0px 20px 13px #00000014;
+    scroll-margin-top: 8em;
 }
 .about .quadrata img {
     display: none;
