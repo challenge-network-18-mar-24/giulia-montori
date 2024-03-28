@@ -7,6 +7,9 @@
 ::selection {
     background-color: #c9e9ed;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     color:#6b6b6b;
     padding: 0;
@@ -23,15 +26,15 @@ a {
 /* HEADER */
 header {
     max-width: 90%;
-    border-radius: 8px;
+    text-align: center;
     margin: 2% auto;
+    padding: 2em;    
     background-color: white;
-    padding: 2em;
-    text-align: center;    
+    box-shadow: 0px 0px 20px 13px #00000014;
+    border-radius: 8px;
     position: sticky;
     top: 2%;
-    z-index: 1;;
-    box-shadow: 0px 0px 20px 13px #00000014;
+    z-index: 1;
 }
 .burger {
     display: none;
@@ -50,6 +53,48 @@ nav a {
     border-radius: 10px;
     */
 }
+/* MENU MOBILE */
+#menu-toggle {
+    display: none;
+}
+.menu-button-container {
+    display: none;
+    min-height: 20px;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.menu-button, .menu-button::before, .menu-button::after {
+    display: block;
+    background-color: #333;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+.menu-button::before {
+    content: "";
+    margin-top: -8px;
+}
+.menu-button::after {
+    content: "";
+    margin-top: 8px;
+}
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+} 
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
 /* MAIN */
 section {
     max-width: 90%;
@@ -57,6 +102,7 @@ section {
     margin: 2em auto;
     background-color: white;
     display: grid;
+    justify-content: space-between;
     grid-template-columns: 48% auto;
     align-items: center;
     box-shadow: 0px 0px 20px 13px #00000014;
@@ -219,8 +265,72 @@ ul a {
     body {
         background: #e4e4e4 url(../images/logo.jpg) no-repeat;
         background-position: 2rem 1.3rem;
-        background-size: 11rem;
+        background-size: 9rem;
     }
+    header {
+        text-align: right;
+        margin-right: 0%;
+        max-width: 5.4rem;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+    /* mobile menu */
+    .menu-button-container {
+        display: flex;
+        opacity: 0.75;
+    }
+    #menu-toggle,.menu-button-container {
+        position: relative;
+        z-index: 100;
+    } 
+    nav.menu {
+        width: 0;
+        position: absolute;
+        top: 0;
+        right: -100vw;
+        gap: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: all 800ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu {
+        width: 100vw;
+        right: 0;
+        overflow: hidden;
+        padding: 4em 6em 2em; 
+        background-color: white;
+        box-shadow: 0px 0px 20px 13px #00000014;
+        border-radius: 8px;
+        transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 2em 2em 0;
+        width: 100%;
+        color: #666;
+        border-bottom: 1px solid #eeebeb;
+    }
+    .menu > a:last-child {
+        border-bottom: 0;
+    }
+    .menu > a:after  {
+        content: '';
+        padding-top: 2em;
+        display: block;
+        width: 0;
+    }
+    .menu > a:hover:after  {
+        width: 100%;
+        border-bottom: 2px solid #666;
+        transition: width 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    /* */
+
     .nomobile {
         display: none;
     }
@@ -229,21 +339,6 @@ ul a {
     }
     .bigger {
         font-size: 2rem;
-    }
-    nav {
-        display: none;
-    }
-    .burger {
-        display: inline-block;
-        line-height: 0;
-        opacity: 0.75;
-    }
-    header {
-        text-align: right;
-        margin-right: 0%;
-        max-width: 5.4rem;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
     }
     section, section.portfolio, .projects {
         display: grid;
@@ -312,6 +407,9 @@ ul a {
 @media (max-width: 460px) {
     .revert .testo {
         background: linear-gradient(129deg, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 60%);
+    }
+    .discover {
+    background-size: contain;
     }
 }
 @media (max-width: 375px) {
