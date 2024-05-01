@@ -36,7 +36,7 @@
                 <p> I'm 35, <!-- Not for long... --> from Rome and I'm a <i><b>Graphic & Web Designer</b></i>.<br></p>
                 <!-- My passions are (too many, but I select just 3) -->
 
-                <p><b>I LOVE music</b>, I mainly listen to <i>Hard-Rock e Metal</i>, but I <u>almost</u> listen to all other genere. I'm very passionate about <b>DIY</b> mostly linked to the world of technology and <i>home domotics</i>.</p>
+                <p><b>I LOVE music</b>, I mainly listen to <i>Hard-Rock & Metal</i>, but I <u>almost</u> listen to all other genere. I'm very passionate about <b>DIY</b> mostly linked to the world of technology and <i>home domotics</i>.</p>
                 <p>I'm a huge <b>F1</b> fan, I cheer on almost all the drivers on the track, but my all-time favorites are:</p>
                 <ul>
                     <li><a href="https://it.wikipedia.org/wiki/Michael_Schumacher" target="_blank">Michael Schumacher</a></li>
@@ -62,6 +62,9 @@
             <div class="testo nomobile">
                 <h3 class="sopratitolo">You would like to</h3>
                 <h3 class="titolo bigger">Discover my Portfolio!</h3>
+                <p>Sort:</p>
+                <button onclick="sortAZ()">AZ</button>
+                <button onclick="sortZA()">ZA</button>
             </div>
             <div class="testo mobile">
                 <h3 class="sopratitolo">Discover my</h3>
@@ -92,20 +95,21 @@
             </div>
         </section>
         <section id="contacts" class="contacts">
-            <form class="form grid">
-                <input type="text" name="nome" id="" placeholder="Nome">
-                <input type="email" name="email" id="" placeholder="Email">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Messaggio"></textarea>
-                <button type="submit">Invia</button>
+            <div class="form grid">
+                <input type="text" name="nome" id="nome" placeholder="Nome" >
+                <input type="email" name="email" id="email" placeholder="Email" >
+                <textarea name="" id="messaggio" cols="30" rows="10" placeholder="Messaggio"></textarea>
+                <button onclick="controllaForm()">Invia</button>
                 <div class="checkbox">
-                    <input type="checkbox" id="checkbox_id">
+                    <input type="checkbox" id="checkbox_id" >
                     <label for="checkbox_id">Accetto Termini e Tiburtina</label>
                 </div>
-            </form>
+            </div>
             <div class="testo">
                 <h3 class="sopratitolo">Get in touch</h3>
                 <h3 class="titolo bigger">Contact me!</h3>
             </div>
         </section>
+        <script src="./js/functions.js"></script>
     </body>
 </html>
